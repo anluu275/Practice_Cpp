@@ -20,8 +20,8 @@ void merge(vector<int>& arr, int low, int mid, int high)
 
 	for (int i = 0; i < s1 + s2; ++i)
 	{
-		if		(x >= s1)				arr[z++] = right[y++];
-		else if (y >= s2)				arr[z++] = left[x++];
+		if (x >= s1)	arr[z++] = right[y++];
+		else if (y >= s2)	arr[z++] = left[x++];
 		else if (left[x] <= right[y])	arr[z++] = left[x++];
 		else if (right[y] < left[x])	arr[z++] = right[y++];
 	}
