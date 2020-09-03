@@ -1,6 +1,47 @@
 #include "Linked_List.h"
 
 template<class T>
+int Linked_List<T>::getLength() const
+{
+	return length;
+}
+
+template<class T>
+T	Linked_List<T>::getFirst() const
+{
+	try
+	{
+		if (isEmpty())
+			throw logic_error("No items in Linked List to getFirst");
+		return head->val;
+	}
+	catch (exception& ex)
+	{
+		cout << ex.what() << endl;
+	}
+}
+
+template<class T>
+T	Linked_List<T>::getAtIndex(int i) const
+{
+	try
+	{
+		if (isEmpty())
+			throw logic_error("No items in Linked List to getAtIndex");
+		if (i >= length || i < 0)
+			throw logic_error("Index is out of range of LinkedList");
+		
+		Node<T>* temp = head;
+		for (int j = 0; j < i; ++j)
+			temp = temp->next;
+		return temp->val;
+	}
+	catch (exception &ex) {
+		cout << ex.what() << endl;
+	}
+}
+
+template<class T>
 void Linked_List<T>::insertFront(const T& data)
 {
 	if (isEmpty())
@@ -14,18 +55,46 @@ void Linked_List<T>::insertFront(const T& data)
 }
 
 template<class T>
+void Linked_List<T>::insertAtIndex(const T& data, int i)
+{
+	if (0 == i)
+		insertFront(data);
+	else if (i < 0 || i > length)
+	{
+		cout << "Index given was out of range of LinkedList. \n" << 
+			" Please choose a index within you currents Linked List range of 0 to " << getLength() << endl;
+		return;
+	}
+	else
+	{
+		Node<T>* curptr = head;
+		Node<T>* prevptr = head;
+
+		for (int j = 0; j < i; ++j)
+		{
+			prevptr = curptr;
+			curptr = curptr->next;
+		}
+
+		Node<T>* newNode = new Node<T>(data, curptr);
+		prevptr->next = newNode;
+		length++;
+	}
+}
+
+template<class T>
 void Linked_List<T>::insertBack(const T& data)
 {
 	if (isEmpty())
-		head = new Node<T>(data);
+		insertFront();
 	else
 	{
 		Node<T>* temp = head;
 		while (temp->next != nullptr)
 			temp = temp->next;
 		temp->next = new Node<T>(data);
+		length++;
 	}
-	length++;
 }
 
 template<class T>
@@ -42,30 +111,32 @@ void Linked_List<T>::removeFirst()
 template<class T>
 void Linked_List<T>::removeAtIndex(int i)
 {
-	return;
-}
-
-template<class T>
-int Linked_List<T>::getLength() const
-{
-	return length;
-}
-
-template<class T>
-T Linked_List<T>::getFirst() const
-{
-	try
+	if (0 == i)
+		removeFirst();
+	else if (isEmpty())
+		return;
+	else if (i < 0 || i > length)
 	{
-		if (isEmpty())
-			throw logic_error("No items in Linked List to getFirst");
-		return head->val;
+		cout << "Index given was out of range of LinkedList. \n" <<
+			" Please choose a index within you currents Linked List range of 0 to " << getLength() - 1 << endl;
+		return;
 	}
-	catch (exception &ex)
+	else
 	{
-		cout << ex.what() << endl;
+		Node<T>* curptr = head;
+		Node<T>* prevptr = head;
+
+		for (int j = 0; j < i; ++j)
+		{
+			prevptr = curptr;
+			curptr = curptr->next;
+		}
+
+		prevptr->next = curptr->next;
+		delete curptr;
+		length--;
 	}
 }
-
 
 template<class T>
 bool Linked_List<T>::isEmpty() const

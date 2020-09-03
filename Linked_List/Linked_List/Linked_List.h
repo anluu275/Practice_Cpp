@@ -39,15 +39,22 @@ public:
 		clear();
 	}
 
+	int		getLength		()	const;
+	T		getFirst		() const;
+	T		getAtIndex		(int i) const;
+
 	void	insertFront		(const T& data);
+	void	insertAtIndex	(const T& data, int i);
 	void	insertBack		(const T& data);
+
 	void	removeFirst		();
 	void	removeAtIndex	(int i);
+
 	void	clear			();
-	void	printList		() const;
-	int		getLength		()	const;
 	bool	isEmpty			() const;
-	T		getFirst		() const;
+	void	printList		() const;
+
+
 
 };
 
