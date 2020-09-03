@@ -53,9 +53,6 @@ public:
 	void	clear			();
 	bool	isEmpty			() const;
 	void	printList		() const;
-
-
-
 };
 
 #endif
