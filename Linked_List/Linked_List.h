@@ -39,20 +39,20 @@ public:
 		clear();
 	}
 
-	int		getLength		()	const;
-	T		getFirst		() const;
-	T		getAtIndex		(int i) const;
+	int	getLength()	const;
+	T	getFirst() const;
+	T	getAtIndex(int i) const;
 
-	void	insertFront		(const T& data);
-	void	insertAtIndex	(const T& data, int i);
-	void	insertBack		(const T& data);
+	void	insertFront(const T& data);
+	void	insertAtIndex(const T& data, int i);
+	void	insertBack(const T& data);
 
-	void	removeFirst		();
-	void	removeAtIndex	(int i);
+	void	removeFirst();
+	void	removeAtIndex(int i);
 
-	void	clear			();
-	bool	isEmpty			() const;
-	void	printList		() const;
+	void	clear();
+	bool	isEmpty() const;
+	void	printList() const;
 };
 
 #endif
