@@ -169,3 +169,25 @@ void Linked_List<T>::printList() const
 		temp = temp->next;
 	}
 }
+
+template<class T>
+void Linked_List<T>::reverseList()
+{
+	Node<T>* temp = head;
+	reverse(temp);
+}
+
+template<class T>
+Node<T>* Linked_List<T>::reverse(Node<T>* temp)
+{
+	if (temp == nullptr)
+		return nullptr;
+	if (temp->next == nullptr)
+	{
+		head = temp;
+		return temp;
+	}
+	Node<T>* nxt = reverse(temp->next);
+	nxt->next = temp;
+	return temp;
+}

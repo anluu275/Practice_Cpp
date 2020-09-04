@@ -24,8 +24,24 @@ void linkedint()
 	intlist.printList();
 }
 
+void reverseIntList()
+{
+	Linked_List<int> reverseintlist;
+	reverseintlist.insertFront(6);
+	reverseintlist.insertFront(5);
+	reverseintlist.insertFront(4);
+	reverseintlist.insertFront(3);
+	reverseintlist.insertFront(2);
+	reverseintlist.insertFront(1);
+	reverseintlist.insertFront(0);
+	reverseintlist.printList();
+	reverseintlist.reverseList();
+	reverseintlist.printList();
+}
+
+
 int main()
 {
-	linkedint();
-	
+	//linkedint();
+	reverseIntList();
 }

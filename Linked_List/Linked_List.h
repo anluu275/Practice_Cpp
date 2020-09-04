@@ -27,6 +27,8 @@ private:
 	Node<T>* head;
 	int length;
 
+	Node<T>* reverse(Node<T>* temp);
+		
 public:
 	Linked_List()
 	{
@@ -50,6 +52,7 @@ public:
 	void	removeFirst();
 	void	removeAtIndex(int i);
 
+	void	reverseList();
 	void	clear();
 	bool	isEmpty() const;
 	void	printList() const;
