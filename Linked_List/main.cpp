@@ -39,9 +39,9 @@ void reverseIntList()
 	reverseintlist.printList();
 }
 
-
 int main()
 {
 	//linkedint();
 	reverseIntList();
+	
 }

@@ -27,7 +27,7 @@ private:
 	Node<T>* head;
 	int length;
 
-	Node<T>* reverse(Node<T>* temp);
+	Node<T>* recursiveReverse(Node<T>* temp);
 		
 public:
 	Linked_List()
@@ -53,6 +53,7 @@ public:
 	void	removeAtIndex(int i);
 
 	void	reverseList();
+	void	iterativeReverse(Node<T>* temp);
 	void	clear();
 	bool	isEmpty() const;
 	void	printList() const;

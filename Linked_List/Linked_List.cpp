@@ -173,12 +173,12 @@ void Linked_List<T>::printList() const
 template<class T>
 void Linked_List<T>::reverseList()
 {
-	Node<T>* temp = head;
-	reverse(temp);
+	//recursiveReverse(head);
+	iterativeReverse(head);
 }
 
 template<class T>
-Node<T>* Linked_List<T>::reverse(Node<T>* temp)
+Node<T>* Linked_List<T>::recursiveReverse(Node<T>* temp)
 {
 	if (temp == nullptr)
 		return nullptr;
@@ -190,4 +190,23 @@ Node<T>* Linked_List<T>::reverse(Node<T>* temp)
 	Node<T>* nxt = reverse(temp->next);
 	nxt->next = temp;
 	return temp;
+}
+
+template<class T>
+void Linked_List<T>::iterativeReverse(Node<T>* temp)
+{
+	if (isEmpty() || length == 1) //Empty or single node list doesnt need to be reversed
+		return;
+
+	Node<T>* curNode = temp;
+	Node<T>* prevNode = nullptr;
+
+	while (curNode != nullptr)
+	{
+		Node<T>* nextNode = curNode->next;
+		curNode->next = prevNode;
+		prevNode = curNode;
+		curNode = nextNode;
+	}
+	head = prevNode;
 }
