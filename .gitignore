@@ -1055,3 +1055,6 @@ Linked_List/Linked_List.vcxproj.filters
 Quick_Sort/Quick_Sort.sln
 Quick_Sort/Quick_Sort.vcxproj
 Quick_Sort/Quick_Sort.vcxproj.filters
+Queue_Array/Queue_Array.sln
+Queue_Array/Queue_Array.vcxproj
+Queue_Array/Queue_Array.vcxproj.filters
