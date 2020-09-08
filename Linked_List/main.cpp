@@ -8,14 +8,28 @@ void linkedint()
 {
 	Linked_List<int> intlist;
 
-	cout << "Value at Index 0: " << intlist.getFirst() << endl;
+	try 
+	{
+		cout << "Value at Index 0: " << intlist.getFirst() << endl;
+	}
+	catch (exception ex)
+	{
+		cout << ex.what() << endl;
+	}
 	cout << "Current Length:" << intlist.getLength() << endl;
 	intlist.insertFront(6);
 	intlist.insertFront(5);
 	intlist.insertAtIndex(4,3); //out of range
 	intlist.insertAtIndex(4,1);
 	intlist.insertAtIndex(7,3);
-	cout << "Value at Index 0: " << intlist.getFirst() << endl;
+	try
+	{
+		cout << "Value at Index 0: " << intlist.getFirst() << endl;
+	}
+	catch (exception ex)
+	{
+		cout << ex.what()<< endl;
+	}
 	cout << "Value at Index 1: " << intlist.getAtIndex(1)	<< endl;
 	cout << "Value at Index 2: " << intlist.getAtIndex(2)	<< endl;
 	intlist.printList();
@@ -41,7 +55,7 @@ void reverseIntList()
 
 int main()
 {
-	//linkedint();
+	linkedint();
 	reverseIntList();
 	
 }

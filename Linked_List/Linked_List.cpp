@@ -9,36 +9,24 @@ int Linked_List<T>::getLength() const
 template<class T>
 T	Linked_List<T>::getFirst() const
 {
-	try
-	{
-		if (isEmpty())
-			throw logic_error("No items in Linked List to getFirst");
-		return head->val;
-	}
-	catch (exception& ex)
-	{
-		cout << ex.what() << endl;
-	}
+
+	if (isEmpty())
+		throw logic_error("No items in Linked List to getFirst");
+	return head->val;
 }
 
 template<class T>
 T	Linked_List<T>::getAtIndex(int i) const
 {
-	try
-	{
-		if (isEmpty())
-			throw logic_error("No items in Linked List to getAtIndex");
-		if (i >= length || i < 0)
-			throw logic_error("Index is out of range of LinkedList");
-		
-		Node<T>* temp = head;
-		for (int j = 0; j < i; ++j)
-			temp = temp->next;
-		return temp->val;
-	}
-	catch (exception &ex) {
-		cout << ex.what() << endl;
-	}
+	if (isEmpty())
+		throw logic_error("No items in Linked List to getAtIndex");
+	if (i >= length || i < 0)
+		throw logic_error("Index is out of range of LinkedList");
+	
+	Node<T>* temp = head;
+	for (int j = 0; j < i; ++j)
+		temp = temp->next;
+	return temp->val;
 }
 
 template<class T>
