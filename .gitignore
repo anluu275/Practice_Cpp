@@ -1061,3 +1061,6 @@ Queue_Array/Queue_Array.vcxproj.filters
 Queue_Linked_List/Queue_Linked_List.sln
 Queue_Linked_List/Queue_Linked_List.vcxproj
 Queue_Linked_List/Queue_Linked_List.vcxproj.filters
+Postfix_Evaluator/Postfix_Evaluator.sln
+Postfix_Evaluator/Postfix_Evaluator.vcxproj
+Postfix_Evaluator/Postfix_Evaluator.vcxproj.filters
