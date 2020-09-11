@@ -16,6 +16,8 @@ void	Queue_Linked_List<T>::pop() // FIFO
 	headptr = headptr->next;
 	delete temp;
 	length--;
+	if (headptr == nullptr)
+		tailptr = nullptr;
 }
 
 template<class T>

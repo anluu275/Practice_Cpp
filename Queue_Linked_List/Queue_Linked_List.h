@@ -38,6 +38,23 @@ public:
 		length = 0;
 	}
 
+	Queue_Linked_List(const Queue_Linked_List& other)
+	{
+		if (other.isEmpty())
+			headptr = tailptr = nullptr;
+		else
+		{
+			headptr = new Node<T>(other.headptr->data);
+			Node<T>* otherCurrent = other.headptr->next;
+			Node<T>* pre = headptr;
+			while (otherCurrent != nullptr) {
+				pre->next = new Node<T>(otherCurrent->data);
+				pre = pre->next;
+				otherCurrent = otherCurrent->next;
+			}
+		}
+	}
+
 	~Queue_Linked_List()
 	{
 		clear();
@@ -51,6 +68,4 @@ public:
 	T	top();
 	int	queSize();
 };
-
-
 #endif // !QUEUE_LINKED_LIST_H
