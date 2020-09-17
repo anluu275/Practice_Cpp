@@ -1,10 +1,7 @@
 #include "Expression_Evaluation.h"
 
-//Assume a paranthesis around entire expression: (ex(press(ion)))
-//Assume expression has spacing between operators and values: (-123.456 * (7 * -8))
-
-// TO-DO LIST
-//Handle overflow or underflow of float value
+//Assume a paranthesis around entire expression: ( ex ( press ( ion )))
+//Assume expression has spacing between operators and values: (-123.456 * (7 * -8 ))
 
 static float value_Helper(string input, int& index)
 {

@@ -1,11 +1,7 @@
 #include "Expression_Evaluation.h"
 
 #include <fstream>
-#include <string>
-#include <iostream>
 #include <exception>
-
-using namespace std;
 
 void expression_Evaluation_Test()
 {
