@@ -1,20 +1,36 @@
 #include "Expression_Evaluation.h"
 
 #include <fstream>
+#include <string>
+#include <iostream>
+#include <exception>
 
-
-
+using namespace std;
 
 void expression_Evaluation_Test()
 {
 	ifstream txt;
+	string input;
 
 	txt.open("expression.txt");
 	if (txt.is_open())
 	{
-
-		while(txt,)
+		while (getline(txt, input))
+		{
+			cout << input << " = ";
+			try
+			{
+				cout << expression_Evaluation(input) << endl;
+			}
+			catch (exception& ex)
+			{
+				cout << ex.what() << endl;
+			}
+		}
+		txt.close();
 	}
+	else
+		cout << "text file failed to open.";
 }
 
 int main()
